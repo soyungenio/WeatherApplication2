@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
 
         ////////////////////////////////////////////////////////////////////////////
         new StartAsync(this).execute();
@@ -55,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("yes, it's written");
             nameTemp = new String[][]{{"Kazan", "Moscow","Sochi","Paris","Berlin"},
                                       {"0","0","0","0","0"}} ;
-           // CustomAdapter cusAdapt = new CustomAdapter(this,nameTemp);/////////????????????
-           // listOfCities.setAdapter(cusAdapt);///////????????????????
         }
         else{
             System.out.println("no need to write");
@@ -78,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }else {
             if(sql.checkFirstStarting()){
-                CustomAdapter cusAdapt = new CustomAdapter(this,nameTemp);/////////????????????
-                listOfCities.setAdapter(cusAdapt);///////????????????????
+                CustomAdapter cusAdapt = new CustomAdapter(this,nameTemp);
+                listOfCities.setAdapter(cusAdapt);
             }
             progDialog.dismiss();
             Toast.makeText(this, "Network conection filed", Toast.LENGTH_SHORT).show();
